@@ -1,10 +1,10 @@
 import Footer from "./Footer.js";
-import Header from "./Header.js";
+import Top from "./Top.js";
 
 export default function Layout({ children }) {
   return (
     <>
-      <Header />
+      <Top />
       <main>{children}</main>
       <Footer/>
     </>

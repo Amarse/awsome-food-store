@@ -6,7 +6,7 @@ var api = {
   async getFoodStores() {
     const res = await axios.get(`${API_URL}`);
     const data = res.data;
-    return { foods : data };
+    return { stores: data };
   },
 };
 
