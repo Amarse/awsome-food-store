@@ -1,22 +1,23 @@
-import { useEffect, useState } from 'react';
-import api from '../../src/api/index.js';
-import FoodList from '../../src/components/foodList/FoodList.js';
+import axios from 'axios';
+import StoreList from '../../src/components/storelist/StoreList.js';
 
-export default function Store() {
-  const [storeList, setStoreList] = useState([]);
-
-  async function getData() {
-    const { stores } = await api.getFoodStores();
-    setStoreList(stores);
-  }
-
-  useEffect(() => {
-    getData();
-  }, []);
+export default function Store({ list }) {
 
   return (
     <div>
-      <FoodList storeList={storeList} />
+      <StoreList list={list} />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const API_URL = process.env.API_URL;
+  const res = await axios.get(API_URL);
+  const data = res.data;
+
+  return {
+    props: {
+      list: data,
+    },
+  };
 }
