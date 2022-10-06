@@ -1,24 +1,9 @@
-import axios from "axios";
-import { Item } from "semantic-ui-react";
+import { useRouter } from 'next/router';
+import StoreItemDetail from '../../src/components/storelist/StoreItemDetail.js';
 
-
-export default function DetailPage({ item }) {
-
-  return (
-    <div>
-      <Item item={item}/>
-    </div>
-  );
-}
-export async function getServerSideProps(context) {
-  const id = context.params.id;
-  const apiUrl = `http://localhost:9000/stores/${id}`;
-  const res = await axios.get(apiUrl);
-  const data = res.data;
-
-  return {
-    props: {
-      item: data,
-    },
-  };
+export default function Id() {
+  const router = useRouter();
+  const { id } = router.query;
+  
+  return <StoreItemDetail id={id} />;
 }
