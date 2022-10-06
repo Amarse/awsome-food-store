@@ -5,25 +5,23 @@ import StoreList from '../../src/components/storelist/StoreList.js';
 import DetailModal from '../../src/components/modal/Modal.js';
 import StoreItemDetail from '../../src/components/storelist/StoreItemDetail.js';
 
-
 export default function Store({ list }) {
   const router = useRouter();
+  const { id } = router.query;
 
   return (
-    <div>
+    <>
       <StoreList list={list} />
       {router.query.id && (
         <DetailModal
           onClose={() => {
-            router.push("/store");
+            router.push('/store');
           }}
         >
-          <StoreItemDetail id={router.query.id} />
+          <StoreItemDetail id={id}  />
         </DetailModal>
       )}
-    </div>
-
-    
+    </>
   );
 }
 

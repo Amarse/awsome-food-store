@@ -1,5 +1,9 @@
 
 function Error({ statusCode }) {
+
+  if(statusCode === '404') {
+    router.push('/404')
+  }
   return (
     <p>
       {statusCode
@@ -9,9 +13,5 @@ function Error({ statusCode }) {
   );
 }
 
-Error.getInitialProps = ({ res, err }) => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
-  return { statusCode };
-};
 
 export default Error;

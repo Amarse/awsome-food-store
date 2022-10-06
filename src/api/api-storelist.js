@@ -9,8 +9,4 @@ export var api = {
     return { stores: data };
   },
 
-  async getStoreId(id) {
-      const path = await axios.get(API_URL + `${id}.json`);
-      return path;
-  }
 };
