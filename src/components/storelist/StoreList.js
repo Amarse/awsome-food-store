@@ -3,6 +3,7 @@ import StoreListItem from './StoreListItem.js';
 
 export default function StoreList(props) {
   const { items } = props;
+  
   return (
     <>
       <Grid>

@@ -4,10 +4,10 @@ export default function DetailModal({ onClose = () => {}, children }) {
 
   return (
     <>
-      <Modal style={{top: "20%"}}
-        closeIcon
+      <Modal closeIcon animation={false} style={{top: "20%"}}
         open={true}
         onClose={onClose}>
+          <Modal.Header></Modal.Header>
         <Modal.Content>{children}</Modal.Content>
       </Modal>
     </>

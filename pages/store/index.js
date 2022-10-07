@@ -11,15 +11,7 @@ export default function Store(props) {
 
   const { items } = props;
 
-  function Error() {
-    if (id === undefined) {
-      router.push('/');
-    }
-  }
-
   const item = items.find((item) => item.id === Number(id));
-
-  console.log(item);
 
   return (
     <>
@@ -39,13 +31,7 @@ export default function Store(props) {
 
 export async function getStaticProps() {
   const items = await getStoreList();
-
-  if (!items) {
-    return {
-      notFound: true,
-    }
-  }
-
+  
   return {
     props: {
       items: items,
