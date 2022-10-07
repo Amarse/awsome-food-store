@@ -1,7 +1,9 @@
 import '../styles/globals.css';
 import 'semantic-ui-css/semantic.min.css';
-import Layout from '../src/components/layout/Layout.js';
+import 'antd/dist/antd.css';
 import Head from 'next/head';
+
+import Layout from 'src/components/layout/Layout.js';
 
 function MyApp({ Component, pageProps }) {
   return (

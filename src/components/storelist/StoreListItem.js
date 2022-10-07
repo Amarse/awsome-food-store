@@ -11,7 +11,7 @@ export default function StoreListItem({ id, thumb }) {
         shallow={true}
       >
         <a>
-          <Image src={thumb} rounded size="medium" style={{ margin: '20px 0 ' }} />
+          <Image src={thumb} rounded size="medium" />
         </a>
       </Link>
     </>

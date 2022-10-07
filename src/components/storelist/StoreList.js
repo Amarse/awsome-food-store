@@ -1,20 +1,21 @@
-import { Grid } from 'semantic-ui-react';
-import StoreListItem from './StoreListItem';
+import { Row, Col } from 'antd';
+import StoreListItem from './StoreListItem.js';
 
-export default function StoreList({ list }) {
+export default function StoreList(props) {
+  const { items } = props;
   return (
     <>
-      <Grid container>
-        <Grid.Row>
-          {list.map((item) => {
+      <div>
+        <Row gutter={[16, 16]}>
+          {items.map((item) => {
             return (
-              <Grid.Column mobile={8} tablet={8} computer={4} key={item.id}>
+              <Col span={6} key={item.id}>
                 <StoreListItem id={item.id} thumb={item.thumb} />
-              </Grid.Column>
+              </Col>
             );
           })}
-        </Grid.Row>
-      </Grid>
+        </Row>
+      </div>
     </>
   );
 }

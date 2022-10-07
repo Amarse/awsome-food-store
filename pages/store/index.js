@@ -1,24 +1,30 @@
-import axios from 'axios';
+import { getStoreList } from 'src/api/api.js';
 import { useRouter } from 'next/router.js';
 
-import StoreList from '../../src/components/storelist/StoreList.js';
-import DetailModal from '../../src/components/modal/Modal.js';
-import StoreItemDetail from '../../src/components/storelist/StoreItemDetail.js';
+import StoreList from 'src/components/storelist/StoreList.js';
+import StoreItemDetail from 'src/components/storelist/StoreItemDetail.js';
 
-export default function Store({ list }) {
+import DetailModal from 'src/components/modal/Modal.js';
+
+export default function Store(props) {
   const router = useRouter();
   const { id } = router.query;
 
+  const { items } = props;
+
+  const item = items.find(item => item.id === Number(id));
+ 
+
   return (
     <>
-      <StoreList list={list} />
+      <StoreList items={items} />
       {router.query.id && (
         <DetailModal
           onClose={() => {
             router.push('/store');
           }}
         >
-          <StoreItemDetail id={id}  />
+          <StoreItemDetail id={id} item={item} />
         </DetailModal>
       )}
     </>
@@ -26,13 +32,11 @@ export default function Store({ list }) {
 }
 
 export async function getStaticProps() {
-  const API_URL = process.env.API_URL;
-  const res = await axios.get(API_URL);
-  const data = res.data;
+  const items = await getStoreList();
 
   return {
     props: {
-      list: data,
+      items: items,
     },
   };
 }

@@ -1,6 +1,7 @@
 import { Header } from 'semantic-ui-react';
-import Nav from './Nav';
 import styles from './layout.module.css';
+
+import Nav from './Nav.js';
 
 export default function Top() {
   return (
@@ -10,7 +11,7 @@ export default function Top() {
           AWESOME FOOD STORE
         </Header>
         <Nav />
-      </div>{' '}
+      </div>
     </div>
   );
 }

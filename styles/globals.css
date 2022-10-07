@@ -32,10 +32,23 @@ main {
   padding: 20px 0;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.ant-menu {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+  border: none;
+}
+
+.ant-menu-title-content a {
+  font-size: 20px;
 }
 
 @media (prefers-color-scheme: dark) {
