@@ -1,6 +1,7 @@
 import styles from './storeListDetail.module.css';
 
 export default function StoreItemDetail(props) {
+  console.log(props);
   const { item } = props;
 
   return (

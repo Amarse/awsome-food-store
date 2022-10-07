@@ -7,7 +7,7 @@ export default function Top() {
   return (
     <div >
       <div className={styles.continer}>
-        <Header as="h2" className={styles.header}>
+        <Header as="h1" className={styles.header}>
           AWESOME FOOD STORE
         </Header>
         <Nav />

@@ -1,0 +1,28 @@
+.about_wrap {
+  width: 800px;
+  margin: 0 auto;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+.about_wrap h2 {
+  color: darkgrey;
+}
+.framework,
+.style, 
+.package {
+  font-size: 20px;
+}
+.package {
+  line-height: 2;
+}
+.package_id{
+  display: inline-block;
+}
+
+.img{
+  width:30%;
+}

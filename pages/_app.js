@@ -1,11 +1,14 @@
 import '../styles/globals.css';
 import 'semantic-ui-css/semantic.min.css';
-import 'antd/dist/antd.css';
 import Head from 'next/head';
 
+
 import Layout from 'src/components/layout/Layout.js';
+import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps }) {
+
+
   return (
     <>
       <Head>

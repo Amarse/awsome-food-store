@@ -1,9 +1,8 @@
 import { getStoreList } from 'src/api/api.js';
 import { useRouter } from 'next/router.js';
-
 import StoreList from 'src/components/storelist/StoreList.js';
-import StoreItemDetail from 'src/components/storelist/StoreItemDetail.js';
 
+import StoreItemDetail from 'src/components/storelist/StoreItemDetail.js';
 import DetailModal from 'src/components/modal/Modal.js';
 
 export default function Store(props) {
@@ -12,8 +11,15 @@ export default function Store(props) {
 
   const { items } = props;
 
-  const item = items.find(item => item.id === Number(id));
- 
+  function Error() {
+    if (id === undefined) {
+      router.push('/');
+    }
+  }
+
+  const item = items.find((item) => item.id === Number(id));
+
+  console.log(item);
 
   return (
     <>
@@ -33,6 +39,12 @@ export default function Store(props) {
 
 export async function getStaticProps() {
   const items = await getStoreList();
+
+  if (!items) {
+    return {
+      notFound: true,
+    }
+  }
 
   return {
     props: {

@@ -4,7 +4,7 @@ function Error({ statusCode }) {
   const router = useRouter();
 
   if (statusCode === '5xx') {
-    router.push('/404');
+    router.push('/');
   }
 
   return function Error({ statusCode }) {

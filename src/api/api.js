@@ -11,3 +11,8 @@ export async function getStoreList() {
   }
   return items;
 }
+
+export async function getStorePath(id) {
+  const allId = await getStoreList();
+  return allId.find((item) => item.id === id);
+}
