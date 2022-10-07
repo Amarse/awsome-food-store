@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"yarn start\" \"yarn mockserver\"",
+    "dev": "concurrently \"next dev\" \"yarn server\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
