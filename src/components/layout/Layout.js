@@ -1,7 +1,7 @@
 import Top from "./Top.js";
 import Footer from "./Footer.js";
 
-export default function Layout({ children }) {
+export default function Layout({children}) {
   return (
     <>
       <Top />

@@ -1,14 +1,14 @@
 import {  Modal } from 'semantic-ui-react';
 
-export default function DetailModal({ onClose = () => {}, children }) {
+export default function DetailModal(props) {
 
   return (
     <>
-      <Modal closeIcon animation={false} style={{top: "20%"}}
+      <Modal closeIcon style={{top: "20%"}}
         open={true}
-        onClose={onClose}>
+        onClose={props.onClose}>
           <Modal.Header></Modal.Header>
-        <Modal.Content>{children}</Modal.Content>
+        <Modal.Content>{props.children}</Modal.Content>
       </Modal>
     </>
   );
